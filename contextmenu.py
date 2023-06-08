@@ -9,7 +9,7 @@ def sha256sum(filename):
             sha256_hash.update(byte_block)
     return sha256_hash.hexdigest()
 
-def scan(filenames):
+def scan(filenames, params):
     names = "".join(filenames)
     url = "https://www.virustotal.com/gui/file/" + str(sha256sum(str(names)))
     webbrowser.open(url, new=0, autoraise=True)
